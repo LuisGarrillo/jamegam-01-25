@@ -15,6 +15,7 @@ signal spotted
 
 
 func _ready() -> void:
+	aux_action = action
 	view_field.rotation_degrees = view_rotation
 	action_timer.start()
 
@@ -25,11 +26,21 @@ func perform_action() -> void:
 func turn(rotation_deg: int, direction) -> void:
 	rotation_degrees += rotation_deg
 
+func is_blocked(target_position: Vector2) -> bool:
+	var space = get_world_2d().direct_space_state
+	var ray_query = PhysicsRayQueryParameters2D.create(global_position, target_position)
+	ray_query.exclude = [self]
+	var result = space.intersect_ray(ray_query)
+	
+	return not result["collider"] is Player 
+
 func on_player_entered(body: Player) -> void:
 	if not body:
 		return
 	
-	aux_action = action
+	if is_blocked(body.global_position):
+		return
+	
 	action = ""
 	notice_cooldown.start()
 

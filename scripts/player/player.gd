@@ -7,7 +7,7 @@ const SPEEDCAPS : Dictionary = {
 	"hat": 175,
 	"human": 75
 }
-
+var on_control: bool = false
 var direction: Array = [0, 0]
 var aim: int = 1
 var form = "hat"
@@ -17,15 +17,15 @@ var target: Enemy
 signal abducted
 
 func _physics_process(delta: float) -> void:
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction[0] = Input.get_axis("left", "right")
-	direction[1] = Input.get_axis("up", "down")
 	updateDefault(delta)
-	check_input()
+	if on_control:
+		check_input()
 	
 	
 func check_input() -> void:
+	direction[0] = Input.get_axis("left", "right")
+	direction[1] = Input.get_axis("up", "down")
+	
 	if Input.is_action_just_pressed("abduct"):
 		abduct()
 	

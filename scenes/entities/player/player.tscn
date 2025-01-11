@@ -38,6 +38,7 @@ z_index = 10
 shape = SubResource("RectangleShape2D_vccdj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 
 [node name="AbductArea" type="Area2D" parent="."]
 collision_layer = 0

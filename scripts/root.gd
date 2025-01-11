@@ -35,7 +35,7 @@ func finish_game() -> void:
 	get_tree().quit()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("reset-debug"):
 		reset()
 		
