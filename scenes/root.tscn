@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://us16yyumf20c" path="res://assets/audio/Hat Sneak Idea 1.mp3" id="4_mfnb4"]
 
 [node name="Root" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,7 @@ script = ExtResource("1_nsbyu")
 [node name="UiDisplay" parent="." instance=ExtResource("1_8t8rg")]
 
 [node name="GameDisplay" type="CanvasLayer" parent="."]
+process_mode = 1
 layer = 0
 follow_viewport_enabled = true
 follow_viewport_scale = 6.0

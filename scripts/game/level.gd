@@ -14,6 +14,7 @@ signal spotted
 signal level_finished
 
 func _ready() -> void:
+	camera_2d.switch_to(target.global_position)
 	goal.level_finished.connect(repeat_level_finished)
 	
 	player.abducted.connect(abduct_enemy)
@@ -22,7 +23,7 @@ func _ready() -> void:
 	for enemy: Enemy in enemies_children:
 		enemy.spotted.connect(repeat_spotted)
 	
-	camera_2d.switch_to(target.global_position)
+	
 	target_focus.start()
 
 
@@ -34,7 +35,7 @@ func repeat_spotted():
 	spotted.emit()
 
 func repeat_level_finished():
-	level_finished.emit()
+	level_finished.emit("level")
 
 
 func _on_target_focus_timeout() -> void:
