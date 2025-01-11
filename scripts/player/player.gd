@@ -14,7 +14,9 @@ var form = "hat"
 var can_abduct: bool = false
 var target: Enemy
 
+var tutorial_abduct_emitted = false
 signal abducted
+signal tutorial_abduct
 
 func _physics_process(delta: float) -> void:
 	updateDefault(delta)
@@ -59,6 +61,9 @@ func on_enemy_close(body: Enemy) -> void:
 	
 	target = body
 	can_abduct = true
+	if not tutorial_abduct_emitted:
+		tutorial_abduct_emitted = true
+		tutorial_abduct.emit()
 	
 
 
