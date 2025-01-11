@@ -34,5 +34,4 @@ centered = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("4_mfnb4")
-autoplay = true
 bus = &"Music"
