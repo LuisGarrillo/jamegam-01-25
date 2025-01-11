@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://bff02yrjqxpid"]
+[gd_scene load_steps=31 format=3 uid="uid://bff02yrjqxpid"]
 
 [ext_resource type="PackedScene" uid="uid://o4fuqxm5fsxs" path="res://scenes/ui/title.tscn" id="1_17jtm"]
 [ext_resource type="Script" path="res://scripts/ui/ui_display.gd" id="1_vomxt"]
 [ext_resource type="Texture2D" uid="uid://tgveleb1rd8e" path="res://assets/sprites/ui/transition_in.png" id="3_umdpx"]
 [ext_resource type="Texture2D" uid="uid://18x33uog3dg2" path="res://assets/sprites/ui/transition_out.png" id="4_6ic51"]
+[ext_resource type="PackedScene" uid="uid://dk1bwr7wm2bg1" path="res://scenes/ui/tutorial.tscn" id="5_of3d3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qcir"]
 atlas = ExtResource("3_umdpx")
@@ -190,6 +191,8 @@ animations = [{
 scale = Vector2(6, 6)
 transform = Transform2D(6, 0, 0, 6, 0, 0)
 script = ExtResource("1_vomxt")
+
+[node name="Tutorial" parent="." instance=ExtResource("5_of3d3")]
 
 [node name="Title" parent="." instance=ExtResource("1_17jtm")]
 
