@@ -8,6 +8,6 @@ Jam Page: https://itch.io/jam/mini-jame-gam-38
 
 ## Credits
 
-Coding: Mel Night
-Music: theBillyGodfrey
-Pixel Art: Mel Night
+- Coding: Mel Night
+- Music: theBillyGodfrey
+- Pixel Art: Mel Night
