@@ -46,7 +46,7 @@ func abduct() -> void:
 		return
 	print("abducted")
 	form = "human"
-	abducted.emit(target)
+	abducted.emit()
 
 # signals
 
