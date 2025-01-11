@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2sjda8sabwrs"]
+
+[ext_resource type="PackedScene" uid="uid://bff02yrjqxpid" path="res://scenes/ui/ui_display.tscn" id="1_8t8rg"]
+[ext_resource type="Script" path="res://scripts/root.gd" id="1_nsbyu"]
+[ext_resource type="Texture2D" uid="uid://mklq41sw8xwl" path="res://assets/sprites/background.png" id="2_rlb2t"]
+[ext_resource type="AudioStream" uid="uid://us16yyumf20c" path="res://assets/audio/Hat Sneak Idea 1.mp3" id="4_mfnb4"]
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nsbyu")
+
+[node name="UiDisplay" parent="." instance=ExtResource("1_8t8rg")]
+
+[node name="GameDisplay" type="CanvasLayer" parent="."]
+layer = 0
+follow_viewport_enabled = true
+follow_viewport_scale = 6.0
+
+[node name="BackgroundDisplay" type="CanvasLayer" parent="."]
+layer = -1
+scale = Vector2(6, 6)
+transform = Transform2D(6, 0, 0, 6, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundDisplay"]
+texture = ExtResource("2_rlb2t")
+centered = false
+
+[node name="AudioManager" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("4_mfnb4")
+autoplay = true
+bus = &"Music"

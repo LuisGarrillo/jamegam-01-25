@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd5mj7rue83qi"]
+
+[ext_resource type="Script" path="res://scripts/entities/enemies/enemy.gd" id="1_ixqy0"]
+[ext_resource type="Texture2D" uid="uid://bsy0brwu4xu27" path="res://assets/sprites/enemies/idle.png" id="1_lnnka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eomld"]
+atlas = ExtResource("1_lnnka")
+region = Rect2(0, 0, 14, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqpc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eomld")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lp570"]
+size = Vector2(14, 24)
+
+[node name="Enemy" type="CharacterBody2D"]
+z_index = 10
+collision_layer = 4
+script = ExtResource("1_ixqy0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gqpc7")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lp570")
+
+[node name="ViewField" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ViewField"]
+polygon = PackedVector2Array(14, 43, 8, 4, 0, 0, -8, 4, -15, 43, 0, 48)
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="NoticeCooldown" type="Timer" parent="Timers"]
+
+[node name="ActionTimer" type="Timer" parent="Timers"]
+
+[connection signal="body_entered" from="ViewField" to="." method="on_player_entered"]
+[connection signal="body_exited" from="ViewField" to="." method="on_player_exited"]
+[connection signal="timeout" from="Timers/NoticeCooldown" to="." method="on_spotted"]
+[connection signal="timeout" from="Timers/ActionTimer" to="." method="_on_action_timer_timeout"]

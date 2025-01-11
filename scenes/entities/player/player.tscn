@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://g7soimdflf5b"]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_0v26y"]
+[ext_resource type="Texture2D" uid="uid://f73qcqqjuska" path="res://assets/sprites/player/idle.png" id="2_3d3b2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leoh4"]
+atlas = ExtResource("2_3d3b2")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qigsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leoh4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vccdj"]
+size = Vector2(18, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ow3ho"]
+radius = 15.0333
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 10
+collision_layer = 2
+script = ExtResource("1_0v26y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qigsy")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 10
+shape = SubResource("RectangleShape2D_vccdj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AbductArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbductArea"]
+shape = SubResource("CircleShape2D_ow3ho")
+
+[connection signal="body_entered" from="AbductArea" to="." method="on_enemy_close"]
+[connection signal="body_exited" from="AbductArea" to="." method="on_enemy_far"]
