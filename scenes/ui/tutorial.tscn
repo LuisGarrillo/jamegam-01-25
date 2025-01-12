@@ -6,6 +6,9 @@
 [sub_resource type="LabelSettings" id="LabelSettings_eejmt"]
 font = ExtResource("2_07vai")
 
+[sub_resource type="Animation" id="Animation_ah0tq"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_24hv7"]
 resource_name = "in"
 length = 0.2
@@ -37,9 +40,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_ah0tq"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ywn3e"]
 _data = {

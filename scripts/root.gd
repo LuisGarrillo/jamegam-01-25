@@ -3,7 +3,8 @@ extends Control
 @onready var ui_display: UiDisplay = $UiDisplay
 
 @onready var level_scenes = [
-	preload("res://scenes/game/level.tscn")
+	preload("res://scenes/game/level.tscn"),
+	preload("res://scenes/game/level_1.tscn")
 ]
 @onready var game_display: CanvasLayer = $GameDisplay
 var level: Level
@@ -34,6 +35,7 @@ func set_up_level() -> void:
 	level.tutorial.connect(ui_display.tutorial.set_message)
 	level.spotted.connect(reset)
 	level.level_finished.connect(ui_display.start_transition)
+	level.request_ready()
 	game_display.add_child(level)
 
 
@@ -61,6 +63,7 @@ func advance_level() -> void:
 		return
 	
 	reset()
+	ui_display.finish_transition()
 
 func finish_game() -> void:
 	get_tree().quit()
