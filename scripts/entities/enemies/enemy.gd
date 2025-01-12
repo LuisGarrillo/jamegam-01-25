@@ -24,6 +24,7 @@ func _ready() -> void:
 	aux_action = action
 	view_field.rotation_degrees = view_rotation
 	animated_sprite_2d.play("idle-" + directions[String.num_int64(view_field.rotation_degrees)])
+	action_timer.wait_time = action_duration
 	action_timer.start()
 
 func perform_action() -> void:

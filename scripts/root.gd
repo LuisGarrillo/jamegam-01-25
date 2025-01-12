@@ -56,6 +56,7 @@ func reset() -> void:
 	
 
 func advance_level() -> void:
+	ui_display.tutorial.out()
 	pausable = false
 	current_level += 1
 	if current_level == len(level_scenes):
@@ -70,8 +71,6 @@ func finish_game() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("reset-debug") and level in game_display.get_children():
-		reset()
 	if Input.is_action_just_pressed("pause") and pausable:
 		toggle_pause()
 		ui_display.toggle_pause()

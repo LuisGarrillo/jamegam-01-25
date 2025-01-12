@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cd5mj7rue83qi"]
+[gd_scene load_steps=13 format=3 uid="uid://cd5mj7rue83qi"]
 
 [ext_resource type="Script" path="res://scripts/entities/enemies/enemy.gd" id="1_ixqy0"]
 [ext_resource type="Texture2D" uid="uid://dfqsthi2wfgyk" path="res://assets/sprites/enemies/idle down.png" id="2_7lw7n"]
 [ext_resource type="Texture2D" uid="uid://btdiighva0p08" path="res://assets/sprites/enemies/idle left.png" id="3_jsfr2"]
 [ext_resource type="Texture2D" uid="uid://c8o3pgn5p6xev" path="res://assets/sprites/enemies/idle right.png" id="4_cplx4"]
 [ext_resource type="Texture2D" uid="uid://kjsalcfxfmii" path="res://assets/sprites/enemies/idle up.png" id="5_p23tm"]
+[ext_resource type="Texture2D" uid="uid://dvqbx5xysifv6" path="res://assets/sprites/enemies/vision field.png" id="6_4prk4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4fu4i"]
 atlas = ExtResource("2_7lw7n")
@@ -77,7 +78,13 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ViewField"]
-polygon = PackedVector2Array(14, 43, 8, 4, 0, 0, -8, 4, -15, 43, 0, 48)
+position = Vector2(0, 13)
+polygon = PackedVector2Array(16, 42, 6, 18, 0, 0, -7, 19, -15, 43, 0, 48)
+
+[node name="Sprite2D" type="Sprite2D" parent="ViewField"]
+position = Vector2(0, 38)
+rotation = 1.5708
+texture = ExtResource("6_4prk4")
 
 [node name="Timers" type="Node2D" parent="."]
 
