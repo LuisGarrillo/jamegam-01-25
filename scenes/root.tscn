@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bff02yrjqxpid" path="res://scenes/ui/ui_display.tscn" id="1_8t8rg"]
 [ext_resource type="Script" path="res://scripts/root.gd" id="1_nsbyu"]
 [ext_resource type="Texture2D" uid="uid://mklq41sw8xwl" path="res://assets/sprites/background.png" id="2_rlb2t"]
-[ext_resource type="AudioStream" uid="uid://us16yyumf20c" path="res://assets/audio/Hat Sneak Idea 1.mp3" id="4_mfnb4"]
+[ext_resource type="AudioStream" uid="uid://b8q5igjmf0smc" path="res://assets/audio/HatCrabGame_MUS-V3_HatLoop.wav" id="4_k264l"]
 
 [node name="Root" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,7 @@ script = ExtResource("1_nsbyu")
 [node name="UiDisplay" parent="." instance=ExtResource("1_8t8rg")]
 
 [node name="GameDisplay" type="CanvasLayer" parent="."]
+process_mode = 1
 layer = 0
 follow_viewport_enabled = true
 follow_viewport_scale = 6.0
@@ -33,5 +35,6 @@ centered = false
 [node name="AudioManager" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("4_mfnb4")
+stream = ExtResource("4_k264l")
+autoplay = true
 bus = &"Music"

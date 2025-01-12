@@ -1,3 +1,206 @@
-[gd_scene format=3 uid="uid://bff02yrjqxpid"]
+[gd_scene load_steps=31 format=3 uid="uid://bff02yrjqxpid"]
+
+[ext_resource type="PackedScene" uid="uid://o4fuqxm5fsxs" path="res://scenes/ui/title.tscn" id="1_17jtm"]
+[ext_resource type="Script" path="res://scripts/ui/ui_display.gd" id="1_vomxt"]
+[ext_resource type="Texture2D" uid="uid://tgveleb1rd8e" path="res://assets/sprites/ui/transition_in.png" id="3_umdpx"]
+[ext_resource type="Texture2D" uid="uid://18x33uog3dg2" path="res://assets/sprites/ui/transition_out.png" id="4_6ic51"]
+[ext_resource type="PackedScene" uid="uid://dk1bwr7wm2bg1" path="res://scenes/ui/tutorial.tscn" id="5_of3d3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qcir"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jb4c4"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofgqr"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmehu"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcyww"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(1280, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6upv"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(1600, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xo2c"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(1920, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p511e"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(2240, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh8st"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(2560, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8tg2"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(2880, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w787v"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(3200, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5i66"]
+atlas = ExtResource("3_umdpx")
+region = Rect2(3520, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nli0e"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnyus"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4bv2"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io77s"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov686"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(1280, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ompt0"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(1600, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5trds"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(1920, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7ywy"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(2240, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbirw"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(2560, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_un6ik"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(2880, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b262v"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(3200, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6vcs"]
+atlas = ExtResource("4_6ic51")
+region = Rect2(3520, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sa1we"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qcir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jb4c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofgqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmehu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcyww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6upv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xo2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p511e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh8st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8tg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w787v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5i66")
+}],
+"loop": false,
+"name": &"in",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nli0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnyus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4bv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io77s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov686")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ompt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5trds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7ywy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbirw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_un6ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b262v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6vcs")
+}],
+"loop": false,
+"name": &"out",
+"speed": 12.0
+}]
 
 [node name="UiDisplay" type="CanvasLayer"]
+scale = Vector2(6, 6)
+transform = Transform2D(6, 0, 0, 6, 0, 0)
+script = ExtResource("1_vomxt")
+
+[node name="Tutorial" parent="." instance=ExtResource("5_of3d3")]
+
+[node name="Title" parent="." instance=ExtResource("1_17jtm")]
+
+[node name="TransitionHolder" type="AnimatedSprite2D" parent="."]
+z_index = 20
+sprite_frames = SubResource("SpriteFrames_sa1we")
+animation = &"in"
+centered = false
+
+[connection signal="start" from="Title" to="." method="start_transition"]
+[connection signal="animation_finished" from="TransitionHolder" to="." method="_on_transition_holder_animation_finished"]

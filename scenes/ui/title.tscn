@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://o4fuqxm5fsxs"]
+
+[ext_resource type="Script" path="res://scripts/ui/title.gd" id="1_bbjsk"]
+[ext_resource type="FontFile" uid="uid://buadin27dtg2w" path="res://assets/fonts/m5x7.ttf" id="1_lsaii"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gwf4l"]
+font = ExtResource("1_lsaii")
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1600.0
+offset_bottom = -900.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bbjsk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 160.0
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "MIND THIEFS"
+label_settings = SubResource("LabelSettings_gwf4l")
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("1_lsaii")
+text = "  START  "
+
+[connection signal="pressed" from="VBoxContainer/GridContainer/Start" to="." method="_on_start_pressed"]
